@@ -1,0 +1,93 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-line"></div>
+    <div class="footer-content">
+      <p class="copyright">
+        <span class="footer-icon">⚛</span>
+        <span>© {year} 大物实验工具站</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-muted">Composed by 五水</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 0 1.5rem 3rem;
+  }
+
+  .footer-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .footer-line {
+    height: 1px;
+    background: var(--c-border);
+    margin-bottom: 2rem;
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--c-text-dim);
+    flex-wrap: wrap;
+  }
+
+  .footer-icon {
+    font-size: 1rem;
+    opacity: 0.4;
+  }
+
+  .footer-sep {
+    opacity: 0.3;
+  }
+
+  .footer-muted {
+    color: var(--c-text-dim);
+    opacity: 0.6;
+    font-size: 0.75rem;
+  }
+
+  .tech-stack {
+    font-size: 0.75rem;
+    color: var(--c-text-dim);
+  }
+
+  .tech-link {
+    color: var(--c-accent-blue);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .tech-link:hover {
+    color: var(--c-text);
+  }
+
+  @media (max-width: 640px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .copyright {
+      justify-content: center;
+    }
+  }
+</style>

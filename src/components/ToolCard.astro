@@ -1,0 +1,281 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  features: string[];
+  href: string;
+  color: 'blue' | 'violet';
+  icon: string;
+  badge?: string;
+}
+
+const { title, description, features, href, color, icon, badge } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class={`tool-card card-${color}`}>
+  <!-- 顶部装饰 -->
+  <div class="card-glow"></div>
+
+  <div class="card-content">
+    <!-- 头部 -->
+    <div class="card-header">
+      <div class="icon-wrapper">
+        <span class="icon">{icon}</span>
+      </div>
+      <div class="header-text">
+        <div class="title-row">
+          <h2 class="card-title">{title}</h2>
+          {badge && <span class="badge">{badge}</span>}
+        </div>
+        <p class="card-desc">{description}</p>
+      </div>
+    </div>
+
+    <!-- 分割线 -->
+    <div class="divider"></div>
+
+    <!-- 功能列表 -->
+    <ul class="feature-list">
+      {features.map((f) => (
+        <li class="feature-item">
+          <span class="check-icon">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M13.5 4.5L6.5 11.5L2.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>{f}</span>
+        </li>
+      ))}
+    </ul>
+
+    <!-- 底部操作 -->
+    <div class="card-footer">
+      <span class="go-text">前往使用</span>
+      <span class="arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .tool-card {
+    display: block;
+    position: relative;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s var(--ease-out-expo);
+    cursor: pointer;
+  }
+
+  .tool-card:hover {
+    border-color: var(--c-border-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* 光晕效果 */
+  .card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  .card-blue .card-glow {
+    background: radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.08), transparent 70%);
+  }
+
+  .card-violet .card-glow {
+    background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.08), transparent 70%);
+  }
+
+  .tool-card:hover .card-glow {
+    opacity: 1;
+  }
+
+  .card-content {
+    position: relative;
+    padding: 2rem;
+  }
+
+  /* 头部 */
+  .card-header {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .icon-wrapper {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    transition: transform 0.4s var(--ease-spring);
+  }
+
+  .card-blue .icon-wrapper {
+    background: var(--c-accent-blue-soft);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+  }
+
+  .card-violet .icon-wrapper {
+    background: var(--c-accent-violet-soft);
+    border: 1px solid rgba(139, 92, 246, 0.12);
+  }
+
+  .tool-card:hover .icon-wrapper {
+    transform: scale(1.08) rotate(-3deg);
+  }
+
+  .header-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 100px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .card-blue .badge {
+    background: var(--c-accent-blue-soft);
+    color: var(--c-accent-blue);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+  }
+
+  .card-violet .badge {
+    background: var(--c-accent-violet-soft);
+    color: var(--c-accent-violet);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    color: var(--c-text-muted);
+    line-height: 1.6;
+  }
+
+  /* 分割线 */
+  .divider {
+    height: 1px;
+    background: var(--c-border);
+    margin: 1.5rem 0;
+  }
+
+  /* 功能列表 */
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.85rem;
+    color: var(--c-text-muted);
+  }
+
+  .check-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+  }
+
+  .card-blue .check-icon {
+    color: var(--c-accent-blue);
+    background: var(--c-accent-blue-soft);
+  }
+
+  .card-violet .check-icon {
+    color: var(--c-accent-violet);
+    background: var(--c-accent-violet-soft);
+  }
+
+  /* 底部 */
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.25rem;
+  }
+
+  .go-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .card-blue .go-text {
+    color: var(--c-accent-blue);
+  }
+
+  .card-violet .go-text {
+    color: var(--c-accent-violet);
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    transition: transform 0.4s var(--ease-out-expo);
+  }
+
+  .card-blue .arrow {
+    color: var(--c-accent-blue);
+  }
+
+  .card-violet .arrow {
+    color: var(--c-accent-violet);
+  }
+
+  .tool-card:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 640px) {
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+</style>

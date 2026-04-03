@@ -1,0 +1,300 @@
+---
+
+---
+
+<section class="collab-section" id="collaborate">
+  <div class="collab-inner">
+    <!-- 装饰背景 -->
+    <div class="collab-bg">
+      <div class="bg-grid"></div>
+    </div>
+
+    <div class="collab-content">
+      <!-- 标签 -->
+      <span class="collab-tag">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="margin-right: 6px;">
+          <path d="M8 1L10 5.5L15 6L11.5 9.5L12.5 14.5L8 12L3.5 14.5L4.5 9.5L1 6L6 5.5L8 1Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+        邀请协作
+      </span>
+
+      <h2 class="collab-title">
+        一起来<span class="highlight">造轮子</span>？
+      </h2>
+
+      <p class="collab-desc">
+        这些工具仍在持续迭代中。如果你擅长前端开发、数值计算、UI 设计，
+        或者只是有好的想法和建议 —— 都非常欢迎加入！
+      </p>
+
+      <!-- 协作方式卡片 -->
+      <div class="collab-cards">
+        <div class="collab-card">
+          <div class="collab-card-icon">🛠</div>
+          <h3>功能开发</h3>
+          <p>新增计算模块、优化算法精度、扩展更多实验场景</p>
+        </div>
+
+        <div class="collab-card">
+          <div class="collab-card-icon">🎨</div>
+          <h3>界面设计</h3>
+          <p>改进交互体验、优化移动端适配、设计更直观的可视化</p>
+        </div>
+
+        <div class="collab-card">
+          <div class="collab-card-icon">📝</div>
+          <h3>内容贡献</h3>
+          <p>撰写使用文档、补充实验模板、提供测试数据</p>
+        </div>
+
+        <div class="collab-card">
+          <div class="collab-card-icon">💡</div>
+          <h3>建议反馈</h3>
+          <p>报告 Bug、提出需求、分享你在实验中遇到的痛点</p>
+        </div>
+      </div>
+
+      <!-- 联系方式 -->
+      <div class="contact-area">
+        <div class="contact-box">
+          <div class="contact-label">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M1 5L8 9L15 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <span>联系邮箱</span>
+          </div>
+          <a href="mailto:your-email@example.com" class="contact-value">
+            your-email@example.com
+          </a>
+        </div>
+
+        <div class="contact-divider-h"></div>
+
+        <div class="contact-box">
+          <div class="contact-label">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 2H2.5A1.5 1.5 0 001 3.5V13.5A1.5 1.5 0 002.5 15H12.5A1.5 1.5 0 0014 13.5V10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M7 9L15 1M15 1H10.5M15 1V5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>GitHub</span>
+          </div>
+          <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener" class="contact-value">
+            github.com/your-repo
+          </a>
+        </div>
+      </div>
+
+      <!-- 额外说明 -->
+      <p class="collab-note">
+        <span class="note-icon">✦</span>
+        无论贡献大小，每一位协作者都会在项目中获得署名致谢
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .collab-section {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .collab-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+    background: var(--c-surface);
+  }
+
+  /* 背景装饰 */
+  .collab-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  }
+
+  .collab-content {
+    position: relative;
+    padding: 3.5rem 3rem;
+    text-align: center;
+  }
+
+  /* 标签 */
+  .collab-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.9rem;
+    background: var(--c-accent-emerald-soft);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    border-radius: 100px;
+    color: var(--c-accent-emerald);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* 标题 */
+  .collab-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .highlight {
+    background: linear-gradient(135deg, var(--c-accent-emerald), var(--c-accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .collab-desc {
+    font-size: 0.95rem;
+    color: var(--c-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+
+  /* 协作方式卡片 */
+  .collab-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .collab-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    text-align: left;
+    transition: all 0.3s ease;
+  }
+
+  .collab-card:hover {
+    border-color: var(--c-border-hover);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .collab-card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .collab-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--c-text);
+  }
+
+  .collab-card p {
+    font-size: 0.8rem;
+    color: var(--c-text-dim);
+    line-height: 1.5;
+  }
+
+  /* 联系方式 */
+  .contact-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
+    margin-bottom: 2rem;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .contact-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--c-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .contact-value {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--c-accent-emerald);
+    transition: color 0.2s ease;
+    word-break: break-all;
+  }
+
+  .contact-value:hover {
+    color: var(--c-text);
+  }
+
+  .contact-divider-h {
+    width: 1px;
+    height: 40px;
+    background: var(--c-border);
+    flex-shrink: 0;
+  }
+
+  /* 备注 */
+  .collab-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--c-text-dim);
+    font-style: italic;
+  }
+
+  .note-icon {
+    color: var(--c-accent-amber);
+    font-style: normal;
+  }
+
+  @media (max-width: 640px) {
+    .collab-content {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .collab-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-area {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 1.25rem;
+    }
+
+    .contact-divider-h {
+      width: 60px;
+      height: 1px;
+    }
+  }
+</style>

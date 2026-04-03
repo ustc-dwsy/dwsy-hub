@@ -1,0 +1,230 @@
+---
+
+---
+
+<header class="header">
+  <div class="header-inner">
+    <!-- 顶部标签 -->
+    <div class="tag-line">
+      <span class="tag">
+        <span class="tag-dot"></span>
+        开源工具集
+      </span>
+      <span class="tag-separator">·</span>
+      <span class="tag-text">为大学物理实验而生</span>
+    </div>
+
+    <!-- 主标题区域 -->
+    <div class="title-group">
+      <h1 class="main-title">
+        <span class="title-line">大物实验</span>
+        <span class="title-line accent">工具站</span>
+      </h1>
+      <div class="title-decoration">
+        <div class="deco-line"></div>
+        <span class="deco-icon">⚛</span>
+        <div class="deco-line"></div>
+      </div>
+    </div>
+
+    <!-- 描述 -->
+    <p class="subtitle">
+      告别繁琐手算，专注实验本身。<br />
+      提供<strong>数据处理</strong>与<strong>公式计算</strong>两大核心工具，<br class="mobile-hide" />
+      覆盖均值、标准差、不确定度等常见需求。
+    </p>
+
+    <!-- 统计信息 -->
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-number">2</span>
+        <span class="stat-label">核心工具</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">∞</span>
+        <span class="stat-label">节省的时间</span>
+      </div>
+      <!-- <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">0</span>
+        <span class="stat-label">收费项目</span>
+      </div> -->
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    padding: 6rem 1.5rem 4rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .header-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* 标签行 */
+  .tag-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.8rem;
+    color: var(--c-text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--c-accent-blue-soft);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 100px;
+    color: var(--c-accent-blue);
+    font-weight: 500;
+    font-size: 0.75rem;
+  }
+
+  .tag-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--c-accent-blue);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .tag-separator {
+    color: var(--c-text-dim);
+  }
+
+  .tag-text {
+    color: var(--c-text-muted);
+  }
+
+  /* 标题 */
+  .title-group {
+    margin-bottom: 2rem;
+  }
+
+  .main-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+
+  .title-line {
+    display: block;
+  }
+
+  .title-line.accent {
+    background: linear-gradient(135deg, var(--c-accent-blue), var(--c-accent-violet));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .deco-line {
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, var(--c-border-hover), transparent);
+  }
+
+  .deco-icon {
+    font-size: 1.2rem;
+    opacity: 0.3;
+  }
+
+  /* 描述 */
+  .subtitle {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--c-text-muted);
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto 3rem;
+  }
+
+  .subtitle strong {
+    color: var(--c-text);
+    font-weight: 500;
+  }
+
+  /* 统计 */
+  .stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.25rem 2rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: 16px;
+    display: inline-flex;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .stat-number {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--c-text);
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--c-text-dim);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 32px;
+    background: var(--c-border);
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      padding: 4rem 1.25rem 3rem;
+    }
+
+    .mobile-hide {
+      display: none;
+    }
+
+    .stats-row {
+      gap: 1.25rem;
+      padding: 1rem 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 1.25rem;
+    }
+  }
+</style>

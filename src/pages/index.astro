@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ToolCard from '../components/ToolCard.astro';
+import CollabSection from '../components/CollabSection.astro';
+import Footer from '../components/Footer.astro';
+
+// ===== 在这里修改你的工具链接 =====
+const DATA_TOOL_URL = 'https://your-data-tool-url.com';
+const FORMULA_TOOL_URL = 'https://your-formula-tool-url.com';
+// =================================
+---
+
+<Layout title="大物实验工具站 | 数据处理 · 公式计算 · 误差分析">
+  <Header />
+
+  <!-- 工具卡片区域 -->
+  <main class="tools-section">
+    <div class="section-header">
+      <span class="section-tag">核心工具</span>
+      <h2 class="section-title">选择你需要的工具</h2>
+    </div>
+
+    <div class="tools-grid">
+      <ToolCard
+        title="数据处理工具"
+        description="自动化处理实验原始数据，一键完成统计分析"
+        features={[
+          '自动计算均值、标准差与方差',
+          '置信区间估计（可选置信水平）',
+          'A 类 / B 类不确定度计算',
+          '合成不确定度与结果报告',
+          '支持批量数据输入与导出',
+        ]}
+        href={DATA_TOOL_URL}
+        color="blue"
+        icon="📊"
+        badge="常用"
+      />
+
+      <ToolCard
+        title="公式计算器"
+        description="智能解析物理公式，自动推导合成不确定度公式"
+        features={[
+          '自由输入任意物理公式',
+          '自动识别变量与常量',
+          '合成不确定度公式自动生成',
+          '支持偏导数计算与展示',
+          '计算结果精确',
+        ]}
+        href={FORMULA_TOOL_URL}
+        color="violet"
+        icon="ƒx"
+      />
+    </div>
+  </main>
+
+  <!-- 协作邀请 -->
+  <CollabSection />
+
+  <!-- 页脚 -->
+  <Footer />
+</Layout>
+
+<style>
+  .tools-section {
+    padding: 1rem 1.5rem 4rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--c-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .tools-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+  }
+</style>
